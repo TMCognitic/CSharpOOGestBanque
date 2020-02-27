@@ -7,6 +7,11 @@ namespace GestBanque
     {
         static void Main(string[] args)
         {
+            Banque banque = new Banque() 
+            {
+                Nom = "Technofutur Bank"
+            };
+
             Personne chuckNorris = new Personne()
             {
                 Nom = "Norris",
