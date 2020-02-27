@@ -2,7 +2,7 @@
 
 namespace Models
 {
-    public class Compte
+    public abstract class Compte
     {
         public static double operator+(double d, Compte compte)
         {
@@ -52,6 +52,11 @@ namespace Models
             }
         }
 
+        public void AppliquerInteret()
+        {
+            Solde += CalculInteret();
+        }
+
         public void Depot(double montant)
         {
             if (montant <= 0)
@@ -75,5 +80,7 @@ namespace Models
 
             Solde -= montant;
         }
+
+        protected abstract double CalculInteret();
     }
 }
