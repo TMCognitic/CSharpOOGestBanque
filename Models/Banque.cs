@@ -6,7 +6,7 @@ namespace Models
 {
     public class Banque
     {
-        private Dictionary<string, Courant> _comptes;
+        private Dictionary<string, Courant> _comptes = new Dictionary<string, Courant>();
         public string Nom { get; set; }
 
         public Courant this[string numero]

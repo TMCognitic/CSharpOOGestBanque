@@ -32,15 +32,18 @@ namespace GestBanque
                 Titulaire = chuckNorris
             };
 
-            courant1.Depot(-500);
-            courant1.Depot(500);
-            courant1.Retrait(-750);
-            courant1.Retrait(750);
+            banque.Ajouter(courant1);
+            banque.Ajouter(courant2);
 
-            courant2.Depot(500);
+            banque["00001"].Depot(-500);
+            banque["00001"].Depot(500);
+            banque["00001"].Retrait(-750);
+            banque["00001"].Retrait(750);
 
-            Console.WriteLine($"Solde du compte '{courant1.Numero}' : {courant1.Solde}");
-            Console.WriteLine($"Solde du compte '{courant2.Numero}' : {courant2.Solde}");
+            banque["00002"].Depot(500);
+
+            Console.WriteLine($"Solde du compte '{banque["00001"].Numero}' : {banque["00001"].Solde}");
+            Console.WriteLine($"Solde du compte '{banque["00002"].Numero}' : {banque["00002"].Solde}");
         }
     }
 }
