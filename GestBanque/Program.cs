@@ -19,21 +19,21 @@ namespace GestBanque
                 DateNaiss = new DateTime(1940, 3, 10)
             };
 
-            Courant courant1 = new Courant()
+            Courant compte1 = new Courant()
             {
                 Numero = "00001",
                 LigneDeCredit = 500,
                 Titulaire = chuckNorris
             };
 
-            Courant courant2 = new Courant()
+            Epargne compte2 = new Epargne()
             {
                 Numero = "00002",
                 Titulaire = chuckNorris
             };
 
-            banque.Ajouter(courant1);
-            banque.Ajouter(courant2);
+            banque.Ajouter(compte1);
+            banque.Ajouter(compte2);
 
             banque["00001"].Depot(-500);
             banque["00001"].Depot(500);
