@@ -44,6 +44,7 @@ namespace GestBanque
 
             Console.WriteLine($"Solde du compte '{banque["00001"].Numero}' : {banque["00001"].Solde}");
             Console.WriteLine($"Solde du compte '{banque["00002"].Numero}' : {banque["00002"].Solde}");
+            Console.WriteLine($"Avoir des comptes de {chuckNorris.Prenom} {chuckNorris.Nom} : {banque.AvoirDesComptes(chuckNorris)}");
         }
     }
 }
