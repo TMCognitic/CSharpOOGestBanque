@@ -2,9 +2,9 @@
 
 namespace Models
 {
-    public abstract class Compte
+    public abstract class Compte : ICustomer, IBanker
     {
-        public static double operator+(double d, Compte compte)
+        public static double operator +(double d, Compte compte)
         {
             return ((d < 0) ? 0 : d) + ((compte.Solde < 0) ? 0 : compte.Solde);
         }
