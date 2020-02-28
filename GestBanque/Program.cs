@@ -18,11 +18,36 @@ namespace GestBanque
             banque.Ajouter(compte1);
             banque.Ajouter(compte2);
 
-            banque["00001"].Depot(-500);
-            banque["00001"].Depot(500);
-            banque["00001"].Retrait(-750);
-            banque["00001"].Retrait(750);
+            try
+            {
+                banque["00001"].Depot(-500);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
+            banque["00001"].Depot(500);
+
+            
+
+            try
+            {
+                banque["00001"].Retrait(-750);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            banque["00001"].Retrait(750);
+            try
+            {
+                banque["00001"].Retrait(750);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             banque["00002"].Depot(500);
 
             banque["00001"].AppliquerInteret();

@@ -16,7 +16,7 @@ namespace Models
             set
             {
                 if (value < 0)
-                    return;
+                    throw new InvalidOperationException();
 
                 _ligneDeCredit = value;
             }

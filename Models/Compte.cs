@@ -72,7 +72,7 @@ namespace Models
         public void Depot(double montant)
         {
             if (montant <= 0)
-                return;
+                throw new ArgumentOutOfRangeException(nameof(montant));
 
             Solde += montant;
         }
@@ -85,10 +85,10 @@ namespace Models
         protected void Retrait(double montant, double ligneDeCredit)
         {
             if (montant <= 0)
-                return;
+                throw new ArgumentOutOfRangeException(nameof(montant));
 
             if (Solde - montant < -ligneDeCredit)
-                return;
+                throw new SoldeInsuffisantException();
 
             Solde -= montant;
         }
