@@ -6,8 +6,9 @@ namespace Models
 {
     public class Banque
     {
-        private Dictionary<string, Compte> _comptes = new Dictionary<string, Compte>();
-        public string Nom { get; set; }
+        private Dictionary<string, Compte> _comptes = new Dictionary<string, Compte>();        
+
+        public string Nom { get; private set; }
 
         public Compte this[string numero]
         {
@@ -16,6 +17,11 @@ namespace Models
                 _comptes.TryGetValue(numero, out Compte compte);
                 return compte;
             }
+        }
+
+        public Banque(string nom)
+        {
+            Nom = nom;
         }
 
         public void Ajouter(Compte compte)
