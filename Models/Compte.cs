@@ -9,6 +9,8 @@ namespace Models
             return ((d < 0) ? 0 : d) + ((compte.Solde < 0) ? 0 : compte.Solde);
         }
 
+        public event PassageEnNegatifDelegate PassageEnNegatifEvent;
+
         private string _numero;
         private double _solde;
         private Personne _titulaire;
@@ -91,6 +93,11 @@ namespace Models
                 throw new SoldeInsuffisantException();
 
             Solde -= montant;
+        }
+
+        protected void RaisePassageEnNegatifEvent()
+        {
+            PassageEnNegatifEvent?.Invoke(this);
         }
 
         protected abstract double CalculInteret();
